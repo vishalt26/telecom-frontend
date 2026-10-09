@@ -4,6 +4,7 @@ import { ToastProvider } from "./context/ToastContext";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import HomeRedirect from "./components/auth/HomeRedirect";
 import AppLayout from "./components/layout/AppLayout";
+import ColdStartBanner from "./components/common/ColdStartBanner";
 
 import LoginPage from "./pages/auth/LoginPage";
 import RegisterPage from "./pages/auth/RegisterPage";
@@ -32,6 +33,7 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <ToastProvider>
+          <ColdStartBanner />
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />

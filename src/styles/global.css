@@ -416,6 +416,26 @@ table.data-table {
   }
 }
 
+/* ---------- Cold start banner ---------- */
+.cold-start-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--accent-wash);
+  color: var(--accent-strong);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 1px solid var(--border-strong);
+}
+
 /* ---------- Toasts ---------- */
 .toast-stack {
   position: fixed;
