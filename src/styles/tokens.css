@@ -1,0 +1,210 @@
+/* Design tokens — light is default, dark via OS preference or [data-theme="dark"] toggle. */
+:root {
+  color-scheme: light;
+
+  /* Chart/UI chrome */
+  --surface-0: #f9f9f7; /* page plane */
+  --surface-1: #fcfcfb; /* card / chart surface */
+  --surface-2: #ffffff;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #898781;
+  --border: rgba(11, 11, 11, 0.1);
+  --border-strong: #e1e0d9;
+  --gridline: #e1e0d9;
+  --baseline: #c3c2b7;
+
+  /* Categorical (fixed order — never cycled) */
+  --series-1: #2a78d6; /* blue */
+  --series-2: #eb6834; /* orange */
+  --series-3: #1baf7a; /* aqua */
+  --series-4: #eda100; /* yellow */
+  --series-5: #e87ba4; /* magenta */
+  --series-6: #008300; /* green */
+  --series-7: #4a3aa7; /* violet */
+  --series-8: #e34948; /* red */
+
+  /* Status (fixed severity meaning — reused for ticket status) */
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #d03b3b;
+  --status-good-contrast-text: #006300;
+
+  /* Brand accent (primary action color) = series-1 */
+  --accent: var(--series-1);
+  --accent-strong: #1c5cab;
+  --accent-wash: #e8f0fb;
+
+  /* Status badge roles (ticket lifecycle) */
+  --badge-pending-bg: #fff3d6;
+  --badge-pending-fg: #8a5a00;
+  --badge-pending-dot: var(--status-warning);
+  --badge-inprogress-bg: #e3edfb;
+  --badge-inprogress-fg: #1c5cab;
+  --badge-inprogress-dot: var(--series-1);
+  --badge-resolved-bg: #e1f5e1;
+  --badge-resolved-fg: #006300;
+  --badge-resolved-dot: var(--status-good);
+  --badge-completed-bg: #e3f6ef;
+  --badge-completed-fg: #0f6b4e;
+  --badge-completed-dot: var(--series-3);
+
+  /* Priority badge roles */
+  --badge-low-bg: #eceae4;
+  --badge-low-fg: #52514e;
+  --badge-medium-bg: #fde8d9;
+  --badge-medium-fg: #a34a0f;
+  --badge-high-bg: #fbe2e1;
+  --badge-high-fg: #a3281f;
+
+  /* Semantic feedback */
+  --success: var(--status-good);
+  --warning: var(--status-warning);
+  --danger: var(--status-critical);
+  --danger-bg: #fbe2e1;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Radius / shadow */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(11, 11, 11, 0.06);
+  --shadow-md: 0 4px 12px rgba(11, 11, 11, 0.08);
+  --shadow-lg: 0 12px 32px rgba(11, 11, 11, 0.12);
+
+  /* Type */
+  --font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.375rem;
+  --fs-2xl: 1.75rem;
+  --fs-3xl: 2.25rem;
+
+  --sidebar-width: 248px;
+  --topbar-height: 64px;
+  --transition: 150ms ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --surface-0: #0d0d0d;
+    --surface-1: #1a1a19;
+    --surface-2: #212120;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted: #898781;
+    --border: rgba(255, 255, 255, 0.1);
+    --border-strong: #2c2c2a;
+    --gridline: #2c2c2a;
+    --baseline: #383835;
+
+    --series-1: #3987e5;
+    --series-2: #d95926;
+    --series-3: #199e70;
+    --series-4: #c98500;
+    --series-5: #d55181;
+    --series-6: #008300;
+    --series-7: #9085e9;
+    --series-8: #e66767;
+
+    --status-good: #0ca30c;
+    --status-warning: #fab219;
+    --status-serious: #ec835a;
+    --status-critical: #e66767;
+    --status-good-contrast-text: #0ca30c;
+
+    --accent-strong: #3987e5;
+    --accent-wash: rgba(57, 135, 229, 0.16);
+
+    --badge-pending-bg: rgba(250, 178, 25, 0.16);
+    --badge-pending-fg: #fab219;
+    --badge-inprogress-bg: rgba(57, 135, 229, 0.16);
+    --badge-inprogress-fg: #7fb0ec;
+    --badge-resolved-bg: rgba(12, 163, 12, 0.18);
+    --badge-resolved-fg: #4fd24f;
+    --badge-completed-bg: rgba(25, 158, 112, 0.18);
+    --badge-completed-fg: #4fd2ac;
+
+    --badge-low-bg: #2c2c2a;
+    --badge-low-fg: #c3c2b7;
+    --badge-medium-bg: rgba(217, 89, 38, 0.18);
+    --badge-medium-fg: #f09a6c;
+    --badge-high-bg: rgba(230, 103, 103, 0.18);
+    --badge-high-fg: #f09a9a;
+
+    --danger-bg: rgba(230, 103, 103, 0.16);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --surface-0: #0d0d0d;
+  --surface-1: #1a1a19;
+  --surface-2: #212120;
+  --text-primary: #ffffff;
+  --text-secondary: #c3c2b7;
+  --text-muted: #898781;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: #2c2c2a;
+  --gridline: #2c2c2a;
+  --baseline: #383835;
+
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --series-4: #c98500;
+  --series-5: #d55181;
+  --series-6: #008300;
+  --series-7: #9085e9;
+  --series-8: #e66767;
+
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #e66767;
+  --status-good-contrast-text: #0ca30c;
+
+  --accent-strong: #3987e5;
+  --accent-wash: rgba(57, 135, 229, 0.16);
+
+  --badge-pending-bg: rgba(250, 178, 25, 0.16);
+  --badge-pending-fg: #fab219;
+  --badge-inprogress-bg: rgba(57, 135, 229, 0.16);
+  --badge-inprogress-fg: #7fb0ec;
+  --badge-resolved-bg: rgba(12, 163, 12, 0.18);
+  --badge-resolved-fg: #4fd24f;
+  --badge-completed-bg: rgba(25, 158, 112, 0.18);
+  --badge-completed-fg: #4fd2ac;
+
+  --badge-low-bg: #2c2c2a;
+  --badge-low-fg: #c3c2b7;
+  --badge-medium-bg: rgba(217, 89, 38, 0.18);
+  --badge-medium-fg: #f09a6c;
+  --badge-high-bg: rgba(230, 103, 103, 0.18);
+  --badge-high-fg: #f09a9a;
+
+  --danger-bg: rgba(230, 103, 103, 0.16);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
